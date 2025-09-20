@@ -1,7 +1,6 @@
 {
-  "name": "ai-auto-updater",
+  "name": "main-site",
   "version": "1.0.0",
-  "description": "AI-driven auto-updating Node.js web project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -13,8 +12,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
-    "mongodb": "^5.8.0",
-    "simple-git": "^3.19.0"
+    "mongodb": "^5.8.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
