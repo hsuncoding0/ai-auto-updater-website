@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>AI 更新站</title>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="max-w-4xl mx-auto py-10 px-6">
+<h1 class="text-3xl font-bold mb-4 text-center">🤖 AI 更新站</h1>
+
+<textarea id="instruction" rows="4" class="w-full p-3 border rounded-lg mb-4" placeholder="請輸入指令，例如：新增首頁按鈕"></textarea>
+<div class="flex gap-2 mb-4">
+  <button id="aiUpdateBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">生成程式碼</button>
+  <button id="sendBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">送到部署站</button>
+</div>
+
+<h2 class="text-xl font-semibold mb-2">AI 回傳檔案</h2>
+<pre id="output" class="bg-gray-800 text-green-200 p-3 rounded-lg overflow-x-auto">尚未生成</pre>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
