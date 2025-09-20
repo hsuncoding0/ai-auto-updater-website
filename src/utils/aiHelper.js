@@ -1,19 +1,16 @@
-const axios = require('axios');
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const { Configuration, OpenAIApi } = require('openai');
+const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAIApi(configuration);
 
 async function askOpenAI(systemPrompt, userPrompt) {
-  const resp = await axios.post('https://api.openai.com/v1/chat/completions', {
-    model: 'gpt-4o-mini',
+  const response = await openai.createChatCompletion({
+    model: "gpt-4",
     messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: userPrompt }
-    ],
-    max_tokens: 2000,
-    temperature: 0.2
-  }, {
-    headers: { Authorization: `Bearer ${OPENAI_API_KEY}` }
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userPrompt }
+    ]
   });
-  return resp.data.choices[0].message.content;
+  return response.data.choices[0].message.content.trim();
 }
 
 module.exports = { askOpenAI };
